@@ -56,7 +56,9 @@ class MainActivity : AppCompatActivity() {
     private fun uploadData(jsonStr: String) {
         val data = Gson().fromJson(jsonStr, SmartJackRequest::class.java)
 
-        if (isValidateData(data)) {
+        if (!isValidateData(data)) {
+            showToastMessage("올바른 데이터 양식이 아닙니다.")
+        } else {
             RetrofitHelper
                 .getInstance()
                 .apiService
@@ -76,8 +78,6 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 })
-        } else {
-            showToastMessage("올바른 데이터 양식이 아닙니다.")
         }
     }
 
