@@ -1,4 +1,4 @@
-package com.example.smartjacksampleapp
+package com.example.smartjacksampleapp.ui
 
 import com.journeyapps.barcodescanner.CaptureActivity
 
